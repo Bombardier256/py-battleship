@@ -29,7 +29,7 @@ class Ship:
         self.health = len(self.decks)
 
     def get_deck(self, row: int, column: int) -> Deck:
-        if result :=  [
+        if result := [
             deck
             for deck in self.decks
             if deck.row == row and deck.column == column
