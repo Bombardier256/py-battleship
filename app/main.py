@@ -29,11 +29,14 @@ class Ship:
         self.health = len(self.decks)
 
     def get_deck(self, row: int, column: int) -> Deck:
-        return [
+        if result :=  [
             deck
             for deck in self.decks
             if deck.row == row and deck.column == column
-        ][0]
+        ][0]:
+            return result
+        else:
+            raise IndexError
 
     def fire(self, row: int, column: int) -> None:
         if deck := self.get_deck(row, column):
